@@ -10,13 +10,14 @@ name:                timestamper
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             1.0
+version:             1.0.2
 
 -- A short (one-line) description of the package.
 synopsis:            Read standard input and prepend each line with a timestamp
 
 -- A longer description of the package.
--- description:         
+description:         timestamper is a utility to apply timestamps to
+                     standard input.
 
 -- URL for the project homepage or repository.
 homepage:            https://github.com/kisom/timestamper
@@ -43,7 +44,8 @@ build-type:          Simple
 
 -- Extra files to be distributed with the package, such as examples or a 
 -- README.
--- extra-source-files:  
+extra-source-files:  README.md
+                    ,CHANGELOG
 
 -- Constraint on the version of Cabal needed to build this package.
 cabal-version:       >=1.10
@@ -60,7 +62,7 @@ executable timestamper
   -- other-extensions:    
   
   -- Other library packages from which modules are imported.
-  build-depends:       base >=4.6 && <4.7
+  build-depends:       base > 4 && < 5
                      , old-locale
                      , time
   
@@ -70,3 +72,7 @@ executable timestamper
   -- Base language which the package is written in.
   default-language:    Haskell2010
   
+source-repository head
+  type:         git
+  location:     https://github.com/kisom/timestamper
+

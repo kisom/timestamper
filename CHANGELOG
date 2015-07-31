@@ -1,0 +1,5 @@
+1.0.2 (2015-07-30)
+	+ Add CHANGELOG and README.md to extra-source-files.
+
+1.0.1 (2015-07-30)
+	+ Remove upper bound base restriction.
