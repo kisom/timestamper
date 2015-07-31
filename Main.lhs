@@ -1,7 +1,9 @@
+> import Control.Exception
 > import Control.Monad
 > import Data.Time.Format
 > import Data.Time.LocalTime
-> import System.Locale
+> import System.Exit
+> import qualified System.Locale as Locale
 
 This is a utility that reads input from standard input and applies a
 timestamp to it, emitting the modified line to standard output.
@@ -28,8 +30,14 @@ line. The order of the first two arguments is important; putting
 timestamp first means the timestamp is generated when this function is
 run, not when a line of input is read.
 
+When EOF occurs, the right behaviour is to exit gracefully.
+
 > timestampIt :: IO ()
-> timestampIt = getLine >>= timestamp >>= putStrLn
+> timestampIt = do
+>   line <- try getLine :: IO (Either IOError String)
+>   case line of
+>     Left  e -> exitSuccess
+>     Right s -> (return s) >>= timestamp >>= putStrLn
 
 Main just needs to run forever, reading lines and timestamping them.
 

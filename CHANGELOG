@@ -1,3 +1,6 @@
+1.0.3 (2015-07-30)
+	+ Don't throw an exception on EOF.
+
 1.0.2 (2015-07-30)
 	+ Add CHANGELOG and README.md to extra-source-files.
 
