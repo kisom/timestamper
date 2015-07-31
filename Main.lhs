@@ -3,7 +3,6 @@
 > import Data.Time.Format
 > import Data.Time.LocalTime
 > import System.Exit
-> import qualified System.Locale as Locale
 
 This is a utility that reads input from standard input and applies a
 timestamp to it, emitting the modified line to standard output.
